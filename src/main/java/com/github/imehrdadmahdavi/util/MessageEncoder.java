@@ -1,4 +1,4 @@
-package com.github.imehrdadmahdavi.utils;
+package com.github.imehrdadmahdavi.util;
 
 import javax.websocket.EncodeException;
 import javax.websocket.Encoder;

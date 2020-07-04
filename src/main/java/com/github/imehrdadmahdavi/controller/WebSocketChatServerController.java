@@ -16,8 +16,8 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 import com.github.imehrdadmahdavi.model.Message;
-import com.github.imehrdadmahdavi.utils.MessageDecoder;
-import com.github.imehrdadmahdavi.utils.MessageEncoder;
+import com.github.imehrdadmahdavi.util.MessageDecoder;
+import com.github.imehrdadmahdavi.util.MessageEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -49,7 +49,6 @@ public class WebSocketChatServerController {
                 logger.error(e.getMessage());
             }
         }
-
     }
 
     /**
@@ -61,7 +60,9 @@ public class WebSocketChatServerController {
         onlineSessions.put(session.getId(), session);
         users.put(session.getId(), username);
         Message message = new Message(
-                Json.createObjectBuilder().add("user", username).add("content", " has joined the conversation!")
+                Json.createObjectBuilder()
+                        .add("user", username)
+                        .add("content", " has joined the conversation!")
                         .add("onlineUsers", Integer.toString(users.size())).build());
         sendMessageToAll(message);
     }
@@ -85,7 +86,9 @@ public class WebSocketChatServerController {
         onlineSessions.remove(session.getId());
         users.remove(session.getId());
         Message message = new Message(
-                Json.createObjectBuilder().add("user", user).add("content", " has left the conversation!")
+                Json.createObjectBuilder()
+                        .add("user", user)
+                        .add("content", " has left the conversation!")
                         .add("onlineUsers", Integer.toString(users.size())).build());
         sendMessageToAll(message);
     }

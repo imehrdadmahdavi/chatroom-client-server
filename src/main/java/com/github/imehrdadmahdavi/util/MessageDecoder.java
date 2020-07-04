@@ -1,4 +1,4 @@
-package com.github.imehrdadmahdavi.utils;
+package com.github.imehrdadmahdavi.util;
 
 import java.io.StringReader;
 
