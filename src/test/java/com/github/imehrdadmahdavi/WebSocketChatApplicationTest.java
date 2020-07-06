@@ -1,5 +1,6 @@
 package com.github.imehrdadmahdavi;
 
+import com.github.imehrdadmahdavi.controller.WebSocketChatServerController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(WebSocketChatServerController.class)
 @AutoConfigureMockMvc
 public class WebSocketChatApplicationTest {
 
