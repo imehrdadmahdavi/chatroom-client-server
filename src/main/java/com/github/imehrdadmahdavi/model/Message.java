@@ -1,9 +1,8 @@
 package com.github.imehrdadmahdavi.model;
 
-import java.io.StringWriter;
-
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.io.StringWriter;
 
 /**
  * WebSocket message model

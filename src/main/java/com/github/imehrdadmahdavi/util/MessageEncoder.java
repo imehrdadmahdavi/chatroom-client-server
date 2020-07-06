@@ -1,12 +1,12 @@
 package com.github.imehrdadmahdavi.util;
 
-import javax.websocket.EncodeException;
-import javax.websocket.Encoder;
-import javax.websocket.EndpointConfig;
-
 import com.github.imehrdadmahdavi.model.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.websocket.EncodeException;
+import javax.websocket.Encoder;
+import javax.websocket.EndpointConfig;
 
 public class MessageEncoder implements Encoder.Text<Message> {
     private static final Logger logger = LoggerFactory.getLogger(MessageEncoder.class);

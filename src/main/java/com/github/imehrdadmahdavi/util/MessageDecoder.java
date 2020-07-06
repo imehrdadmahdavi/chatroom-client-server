@@ -1,16 +1,15 @@
 package com.github.imehrdadmahdavi.util;
 
-import java.io.StringReader;
+import com.github.imehrdadmahdavi.model.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.websocket.DecodeException;
 import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
-
-import com.github.imehrdadmahdavi.model.Message;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.StringReader;
 
 public class MessageDecoder implements Decoder.Text<Message> {
     private static final Logger logger = LoggerFactory.getLogger(MessageDecoder.class);
