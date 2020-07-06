@@ -1,5 +1,8 @@
 package com.github.imehrdadmahdavi.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.StringWriter;
@@ -7,6 +10,8 @@ import java.io.StringWriter;
 /**
  * WebSocket message model
  */
+@Getter
+@Setter
 public class Message {
 
     private String content;
@@ -17,38 +22,14 @@ public class Message {
         this.json = json;
     }
 
-    public JsonObject getJson() {
-        return json;
-    }
-
-    public void setJson(JsonObject json) {
-        this.json = json;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+    public String toJSONString() {
+        StringWriter writer = new StringWriter();
+        Json.createWriter(writer).write(json);
+        return writer.toString();
     }
 
     @Override
     public String toString() {
         return "Message [content=" + content + ", user=" + user + "]";
-    }
-
-    public String toJSONString() {
-        StringWriter writer = new StringWriter();
-        Json.createWriter(writer).write(json);
-        return writer.toString();
     }
 }
